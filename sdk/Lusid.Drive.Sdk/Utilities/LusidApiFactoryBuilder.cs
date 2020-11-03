@@ -23,7 +23,7 @@
         {
             Configuration config = new GlobalConfiguration
             {
-                BasePath = Environment.GetEnvironmentVariable("BASE_PATH") ?? Environment.GetEnvironmentVariable("base_path"),
+                BasePath = Environment.GetEnvironmentVariable("FBN_DRIVE_API_URL") ?? Environment.GetEnvironmentVariable("fbn_drive_api_url"),
                 AccessToken = Environment.GetEnvironmentVariable("FBN_ACCESS_TOKEN") ?? Environment.GetEnvironmentVariable("fbn_access_token")
             };
             return new LusidApiFactory(config);
