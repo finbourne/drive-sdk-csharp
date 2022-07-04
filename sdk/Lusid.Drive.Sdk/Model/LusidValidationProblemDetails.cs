@@ -27,33 +27,35 @@ using OpenAPIDateConverter = Lusid.Drive.Sdk.Client.OpenAPIDateConverter;
 namespace Lusid.Drive.Sdk.Model
 {
     /// <summary>
-    /// LusidProblemDetails
+    /// LusidValidationProblemDetails
     /// </summary>
-    [DataContract(Name = "LusidProblemDetails")]
-    public partial class LusidProblemDetails : IEquatable<LusidProblemDetails>
+    [DataContract(Name = "LusidValidationProblemDetails")]
+    public partial class LusidValidationProblemDetails : IEquatable<LusidValidationProblemDetails>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LusidProblemDetails" /> class.
+        /// Initializes a new instance of the <see cref="LusidValidationProblemDetails" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected LusidProblemDetails() { }
+        protected LusidValidationProblemDetails() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="LusidProblemDetails" /> class.
+        /// Initializes a new instance of the <see cref="LusidValidationProblemDetails" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="errorDetails">errorDetails.</param>
         /// <param name="code">code (required).</param>
+        /// <param name="errors">errors.</param>
         /// <param name="type">type.</param>
         /// <param name="title">title.</param>
         /// <param name="status">status.</param>
         /// <param name="detail">detail.</param>
         /// <param name="instance">instance.</param>
-        public LusidProblemDetails(string name = default(string), List<Dictionary<string, string>> errorDetails = default(List<Dictionary<string, string>>), int code = default(int), string type = default(string), string title = default(string), int? status = default(int?), string detail = default(string), string instance = default(string))
+        public LusidValidationProblemDetails(string name = default(string), List<Dictionary<string, string>> errorDetails = default(List<Dictionary<string, string>>), int code = default(int), Dictionary<string, List<string>> errors = default(Dictionary<string, List<string>>), string type = default(string), string title = default(string), int? status = default(int?), string detail = default(string), string instance = default(string))
         {
             // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for LusidProblemDetails and cannot be null");
+            this.Name = name ?? throw new ArgumentNullException("name is a required property for LusidValidationProblemDetails and cannot be null");
             this.Code = code;
             this.ErrorDetails = errorDetails;
+            this.Errors = errors;
             this.Type = type;
             this.Title = title;
             this.Status = status;
@@ -78,6 +80,12 @@ namespace Lusid.Drive.Sdk.Model
         /// </summary>
         [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public int Code { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Errors
+        /// </summary>
+        [DataMember(Name = "errors", EmitDefaultValue = true)]
+        public Dictionary<string, List<string>> Errors { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
@@ -131,10 +139,11 @@ namespace Lusid.Drive.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class LusidProblemDetails {\n");
+            sb.Append("class LusidValidationProblemDetails {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
@@ -161,15 +170,15 @@ namespace Lusid.Drive.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LusidProblemDetails);
+            return this.Equals(input as LusidValidationProblemDetails);
         }
 
         /// <summary>
-        /// Returns true if LusidProblemDetails instances are equal
+        /// Returns true if LusidValidationProblemDetails instances are equal
         /// </summary>
-        /// <param name="input">Instance of LusidProblemDetails to be compared</param>
+        /// <param name="input">Instance of LusidValidationProblemDetails to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LusidProblemDetails input)
+        public bool Equals(LusidValidationProblemDetails input)
         {
             if (input == null)
                 return false;
@@ -189,6 +198,12 @@ namespace Lusid.Drive.Sdk.Model
                 (
                     this.Code == input.Code ||
                     this.Code.Equals(input.Code)
+                ) && 
+                (
+                    this.Errors == input.Errors ||
+                    this.Errors != null &&
+                    input.Errors != null &&
+                    this.Errors.SequenceEqual(input.Errors)
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -237,6 +252,8 @@ namespace Lusid.Drive.Sdk.Model
                 if (this.ErrorDetails != null)
                     hashCode = hashCode * 59 + this.ErrorDetails.GetHashCode();
                 hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Errors != null)
+                    hashCode = hashCode * 59 + this.Errors.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Title != null)
