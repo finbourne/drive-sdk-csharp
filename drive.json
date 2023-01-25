@@ -8,7 +8,7 @@
             "url": "https://www.finbourne.com",
             "email": "info@finbourne.com"
         },
-        "version": "0.1.463",
+        "version": "0.1.464",
         "x-logo": {
             "url": "https://www.lusid.com/app/assets/logo_white.png",
             "backgroundColor": "#415464"
@@ -37,8 +37,7 @@
                             "maxLength": 256,
                             "minLength": 1,
                             "pattern": "^[A-Za-z0-9_\\-\\.]+[A-Za-z0-9_\\-\\. ]*$",
-                            "type": "string",
-                            "description": "File name."
+                            "type": "string"
                         }
                     },
                     {
@@ -50,8 +49,7 @@
                             "maxLength": 512,
                             "minLength": 1,
                             "pattern": "^[\\/a-zA-Z0-9 \\-_]+$",
-                            "type": "string",
-                            "description": "File path."
+                            "type": "string"
                         }
                     },
                     {
@@ -61,7 +59,6 @@
                         "required": true,
                         "schema": {
                             "type": "integer",
-                            "description": "The size in bytes of the file to be uploaded",
                             "format": "int32"
                         }
                     }
@@ -79,7 +76,7 @@
                 },
                 "responses": {
                     "201": {
-                        "description": "Success",
+                        "description": "Created",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -193,8 +190,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Identifier of the file to be retrieved."
+                            "type": "string"
                         }
                     }
                 ],
@@ -312,14 +308,13 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Identifier of the file to be deleted."
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "204": {
-                        "description": "Success"
+                        "description": "No Content"
                     },
                     "400": {
                         "description": "The details of the input related failure",
@@ -375,8 +370,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Identifier of the file to be updated"
+                            "type": "string"
                         }
                     }
                 ],
@@ -511,8 +505,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Identifier of the file to be downloaded."
+                            "type": "string"
                         }
                     }
                 ],
@@ -634,8 +627,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "The unique file identifier"
+                            "type": "string"
                         }
                     },
                     {
@@ -645,7 +637,6 @@
                         "required": true,
                         "schema": {
                             "type": "integer",
-                            "description": "The size in bytes of the file to be uploaded",
                             "format": "int32"
                         }
                     }
@@ -776,9 +767,7 @@
                             "maxLength": 500,
                             "minLength": 1,
                             "pattern": "^[a-zA-Z0-9\\+/]*={0,3}$",
-                            "type": "string",
-                            "description": "The pagination token to use to continue listing contents from a previous call to list contents.\r\n            This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields\r\n            must not have changed since the original request. Also, if set, a start value cannot be provided.",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -789,9 +778,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string"
-                            },
-                            "description": "Order the results by these fields. Use use the '-' sign to denote descending order.",
-                            "nullable": true
+                            }
                         },
                         "x-nullable": true
                     },
@@ -801,9 +788,7 @@
                         "description": "When paginating, skip this number of results.",
                         "schema": {
                             "type": "integer",
-                            "description": "When paginating, skip this number of results.",
-                            "format": "int32",
-                            "nullable": true
+                            "format": "int32"
                         },
                         "x-nullable": true
                     },
@@ -813,9 +798,7 @@
                         "description": "When paginating, limit the number of returned results to this many.",
                         "schema": {
                             "type": "integer",
-                            "description": "When paginating, limit the number of returned results to this many.",
-                            "format": "int32",
-                            "nullable": true
+                            "format": "int32"
                         },
                         "x-nullable": true
                     },
@@ -828,9 +811,7 @@
                             "minLength": 0,
                             "pattern": "^[\\s\\S]*$",
                             "type": "string",
-                            "description": "Expression to filter the result set.",
-                            "default": "true",
-                            "nullable": true
+                            "default": "true"
                         }
                     }
                 ],
@@ -916,7 +897,7 @@
                 },
                 "responses": {
                     "201": {
-                        "description": "Success",
+                        "description": "Created",
                         "content": {
                             "text/plain": {
                                 "schema": {
@@ -1030,8 +1011,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Unique ID of the folder"
+                            "type": "string"
                         }
                     }
                 ],
@@ -1169,8 +1149,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Unique ID of the folder"
+                            "type": "string"
                         }
                     }
                 ],
@@ -1323,14 +1302,13 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Unique ID of the folder"
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "204": {
-                        "description": "Success"
+                        "description": "No Content"
                     },
                     "400": {
                         "description": "The details of the input related failure",
@@ -1406,8 +1384,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Unique ID of the folder where the files should be moved"
+                            "type": "string"
                         }
                     },
                     {
@@ -1416,7 +1393,6 @@
                         "description": "True if the destination has file with same name if should be overwritten",
                         "schema": {
                             "type": "boolean",
-                            "description": "True if the destination has file with same name if should be overwritten",
                             "default": false
                         },
                         "x-nullable": true
@@ -1427,7 +1403,6 @@
                         "description": "If true after moving the original file is deleted",
                         "schema": {
                             "type": "boolean",
-                            "description": "If true after moving the original file is deleted",
                             "default": false
                         },
                         "x-nullable": true
@@ -1441,8 +1416,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "string"
-                                },
-                                "description": "Enumerable of unique IDs of files that should be moved"
+                                }
                             },
                             "example": [
                                 "FolderID1",
@@ -1570,8 +1544,7 @@
                             "maxLength": 40,
                             "minLength": 30,
                             "pattern": "^[a-zA-Z0-9\\-]+$",
-                            "type": "string",
-                            "description": "Unique ID of the folder"
+                            "type": "string"
                         }
                     },
                     {
@@ -1582,9 +1555,7 @@
                             "maxLength": 500,
                             "minLength": 1,
                             "pattern": "^[a-zA-Z0-9\\+/]*={0,3}$",
-                            "type": "string",
-                            "description": "The pagination token to use to continue listing contents from a previous call to list contents.\r\n            This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields\r\n            must not have changed since the original request. Also, if set, a start value cannot be provided.",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -1595,9 +1566,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string"
-                            },
-                            "description": "Order the results by these fields. Use use the '-' sign to denote descending order.",
-                            "nullable": true
+                            }
                         },
                         "x-nullable": true
                     },
@@ -1607,9 +1576,7 @@
                         "description": "When paginating, skip this number of results.",
                         "schema": {
                             "type": "integer",
-                            "description": "When paginating, skip this number of results.",
-                            "format": "int32",
-                            "nullable": true
+                            "format": "int32"
                         },
                         "x-nullable": true
                     },
@@ -1619,9 +1586,7 @@
                         "description": "When paginating, limit the number of returned results to this many.",
                         "schema": {
                             "type": "integer",
-                            "description": "When paginating, limit the number of returned results to this many.",
-                            "format": "int32",
-                            "nullable": true
+                            "format": "int32"
                         },
                         "x-nullable": true
                     },
@@ -1634,9 +1599,7 @@
                             "minLength": 0,
                             "pattern": "^[\\s\\S]*$",
                             "type": "string",
-                            "description": "Expression to filter the result set.",
-                            "default": "",
-                            "nullable": true
+                            "default": ""
                         }
                     }
                 ],
@@ -1784,9 +1747,7 @@
                             "maxLength": 500,
                             "minLength": 1,
                             "pattern": "^[a-zA-Z0-9\\+/]*={0,3}$",
-                            "type": "string",
-                            "description": "",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -1797,9 +1758,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string"
-                            },
-                            "description": "",
-                            "nullable": true
+                            }
                         },
                         "x-nullable": true
                     },
@@ -1809,9 +1768,7 @@
                         "description": "",
                         "schema": {
                             "type": "integer",
-                            "description": "",
-                            "format": "int32",
-                            "nullable": true
+                            "format": "int32"
                         },
                         "x-nullable": true
                     },
@@ -1824,9 +1781,7 @@
                             "minLength": 0,
                             "pattern": "^[\\s\\S]*$",
                             "type": "string",
-                            "description": "",
-                            "default": "",
-                            "nullable": true
+                            "default": ""
                         }
                     }
                 ],
@@ -1916,6 +1871,7 @@
                 "type": "object",
                 "properties": {
                     "description": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "action": {
@@ -1954,6 +1910,7 @@
                         "nullable": true
                     },
                     "description": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "actions": {
@@ -2045,12 +2002,15 @@
                         "format": "int32"
                     },
                     "name": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "displayName": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "description": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "required": {
@@ -2081,7 +2041,7 @@
                         }
                     },
                     "actions": {
-                        "minLength": 1,
+                        "minItems": 1,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/ActionId"
@@ -2135,6 +2095,7 @@
                 "type": "object",
                 "properties": {
                     "name": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "errorDetails": {
@@ -2171,18 +2132,9 @@
                     "instance": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "extensions": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "object",
-                            "additionalProperties": false
-                        },
-                        "nullable": true,
-                        "readOnly": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": {}
             },
             "LusidValidationProblemDetails": {
                 "required": [
@@ -2192,6 +2144,7 @@
                 "type": "object",
                 "properties": {
                     "name": {
+                        "minLength": 1,
                         "type": "string"
                     },
                     "errorDetails": {
@@ -2238,18 +2191,9 @@
                     "instance": {
                         "type": "string",
                         "nullable": true
-                    },
-                    "extensions": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "object",
-                            "additionalProperties": false
-                        },
-                        "nullable": true,
-                        "readOnly": true
                     }
                 },
-                "additionalProperties": false
+                "additionalProperties": {}
             },
             "PagedResourceListOfStorageObject": {
                 "required": [
@@ -2381,6 +2325,7 @@
                         "description": "Name of the folder or file"
                     },
                     "createdBy": {
+                        "minLength": 1,
                         "type": "string",
                         "description": "Identifier of the user who created the file or folder"
                     },
@@ -2390,6 +2335,7 @@
                         "format": "date-time"
                     },
                     "updatedBy": {
+                        "minLength": 1,
                         "type": "string",
                         "description": "Identifier of the last user to modify the file or folder"
                     },
@@ -2399,6 +2345,7 @@
                         "format": "date-time"
                     },
                     "type": {
+                        "minLength": 1,
                         "type": "string",
                         "description": "Type of storage object (file or folder)"
                     },
