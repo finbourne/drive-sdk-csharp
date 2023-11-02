@@ -2,17 +2,16 @@
 
 All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
-[**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [EARLY ACCESS] DeleteFile: Deletes a file from Drive.
-[**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [EARLY ACCESS] DownloadFile: Download the file from Drive.
-[**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [EARLY ACCESS] GetFile: Get a file stored in Drive.
-[**UpdateFileContents**](FilesApi.md#updatefilecontents) | **PUT** /api/files/{id}/contents | [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.
-[**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive.
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. |
+| [**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [EARLY ACCESS] DeleteFile: Deletes a file from Drive. |
+| [**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [EARLY ACCESS] DownloadFile: Download the file from Drive. |
+| [**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [EARLY ACCESS] GetFile: Get a file stored in Drive. |
+| [**UpdateFileContents**](FilesApi.md#updatefilecontents) | **PUT** /api/files/{id}/contents | [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive. |
+| [**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive. |
 
-
-<a name="createfile"></a>
+<a id="createfile"></a>
 # **CreateFile**
 > StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body)
 
@@ -38,10 +37,10 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FilesApi(config);
-            var xLusidDriveFilename = xLusidDriveFilename_example;  // string | File name.
-            var xLusidDrivePath = xLusidDrivePath_example;  // string | File path.
+            var xLusidDriveFilename = "xLusidDriveFilename_example";  // string | File name.
+            var xLusidDrivePath = "xLusidDrivePath_example";  // string | File path.
             var contentLength = 56;  // int | The size in bytes of the file to be uploaded
-            var body = BYTE_ARRAY_DATA_HERE;  // byte[] | 
+            var body = System.Text.Encoding.ASCII.GetBytes("BYTE_ARRAY_DATA_HERE");  // byte[] | 
 
             try
             {
@@ -51,8 +50,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FilesApi.CreateFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FilesApi.CreateFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -60,14 +59,34 @@ namespace Example
 }
 ```
 
+#### Using the CreateFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+    ApiResponse<StorageObject> response = apiInstance.CreateFileWithHttpInfo(xLusidDriveFilename, xLusidDrivePath, contentLength, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesApi.CreateFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xLusidDriveFilename** | **string**| File name. | 
- **xLusidDrivePath** | **string**| File path. | 
- **contentLength** | **int**| The size in bytes of the file to be uploaded | 
- **body** | **byte[]**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xLusidDriveFilename** | **string** | File name. |  |
+| **xLusidDrivePath** | **string** | File path. |  |
+| **contentLength** | **int** | The size in bytes of the file to be uploaded |  |
+| **body** | **byte[]** |  |  |
 
 ### Return type
 
@@ -92,7 +111,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletefile"></a>
+<a id="deletefile"></a>
 # **DeleteFile**
 > void DeleteFile (string id)
 
@@ -118,7 +137,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FilesApi(config);
-            var id = id_example;  // string | Identifier of the file to be deleted.
+            var id = "id_example";  // string | Identifier of the file to be deleted.
 
             try
             {
@@ -127,8 +146,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FilesApi.DeleteFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FilesApi.DeleteFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -136,11 +155,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // [EARLY ACCESS] DeleteFile: Deletes a file from Drive.
+    apiInstance.DeleteFileWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesApi.DeleteFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Identifier of the file to be deleted. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Identifier of the file to be deleted. |  |
 
 ### Return type
 
@@ -165,7 +201,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="downloadfile"></a>
+<a id="downloadfile"></a>
 # **DownloadFile**
 > System.IO.Stream DownloadFile (string id)
 
@@ -191,7 +227,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FilesApi(config);
-            var id = id_example;  // string | Identifier of the file to be downloaded.
+            var id = "id_example";  // string | Identifier of the file to be downloaded.
 
             try
             {
@@ -201,8 +237,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FilesApi.DownloadFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FilesApi.DownloadFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -210,11 +246,31 @@ namespace Example
 }
 ```
 
+#### Using the DownloadFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // [EARLY ACCESS] DownloadFile: Download the file from Drive.
+    ApiResponse<System.IO.Stream> response = apiInstance.DownloadFileWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesApi.DownloadFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Identifier of the file to be downloaded. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Identifier of the file to be downloaded. |  |
 
 ### Return type
 
@@ -241,7 +297,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getfile"></a>
+<a id="getfile"></a>
 # **GetFile**
 > StorageObject GetFile (string id)
 
@@ -267,7 +323,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FilesApi(config);
-            var id = id_example;  // string | Identifier of the file to be retrieved.
+            var id = "id_example";  // string | Identifier of the file to be retrieved.
 
             try
             {
@@ -277,8 +333,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FilesApi.GetFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FilesApi.GetFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -286,11 +342,31 @@ namespace Example
 }
 ```
 
+#### Using the GetFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // [EARLY ACCESS] GetFile: Get a file stored in Drive.
+    ApiResponse<StorageObject> response = apiInstance.GetFileWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesApi.GetFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Identifier of the file to be retrieved. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Identifier of the file to be retrieved. |  |
 
 ### Return type
 
@@ -315,7 +391,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatefilecontents"></a>
+<a id="updatefilecontents"></a>
 # **UpdateFileContents**
 > StorageObject UpdateFileContents (string id, int contentLength, byte[] body)
 
@@ -341,9 +417,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FilesApi(config);
-            var id = id_example;  // string | The unique file identifier
+            var id = "id_example";  // string | The unique file identifier
             var contentLength = 56;  // int | The size in bytes of the file to be uploaded
-            var body = BYTE_ARRAY_DATA_HERE;  // byte[] | 
+            var body = System.Text.Encoding.ASCII.GetBytes("BYTE_ARRAY_DATA_HERE");  // byte[] | 
 
             try
             {
@@ -353,8 +429,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FilesApi.UpdateFileContents: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FilesApi.UpdateFileContents: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -362,13 +438,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateFileContentsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.
+    ApiResponse<StorageObject> response = apiInstance.UpdateFileContentsWithHttpInfo(id, contentLength, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesApi.UpdateFileContentsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The unique file identifier | 
- **contentLength** | **int**| The size in bytes of the file to be uploaded | 
- **body** | **byte[]**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | The unique file identifier |  |
+| **contentLength** | **int** | The size in bytes of the file to be uploaded |  |
+| **body** | **byte[]** |  |  |
 
 ### Return type
 
@@ -393,7 +489,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatefilemetadata"></a>
+<a id="updatefilemetadata"></a>
 # **UpdateFileMetadata**
 > StorageObject UpdateFileMetadata (string id, UpdateFile updateFile)
 
@@ -419,7 +515,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FilesApi(config);
-            var id = id_example;  // string | Identifier of the file to be updated
+            var id = "id_example";  // string | Identifier of the file to be updated
             var updateFile = new UpdateFile(); // UpdateFile | Update to be applied to file
 
             try
@@ -430,8 +526,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FilesApi.UpdateFileMetadata: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FilesApi.UpdateFileMetadata: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -439,12 +535,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateFileMetadataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // [EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive.
+    ApiResponse<StorageObject> response = apiInstance.UpdateFileMetadataWithHttpInfo(id, updateFile);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FilesApi.UpdateFileMetadataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Identifier of the file to be updated | 
- **updateFile** | [**UpdateFile**](UpdateFile.md)| Update to be applied to file | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | Identifier of the file to be updated |  |
+| **updateFile** | [**UpdateFile**](UpdateFile.md) | Update to be applied to file |  |
 
 ### Return type
 

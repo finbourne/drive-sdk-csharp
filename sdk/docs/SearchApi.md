@@ -2,14 +2,13 @@
 
 All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Search**](SearchApi.md#search) | **POST** /api/search | [EARLY ACCESS] Search: Search for a file or folder with a given name and path
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Search**](SearchApi.md#search) | **POST** /api/search | [EARLY ACCESS] Search: Search for a file or folder with a given name and path |
 
-
-<a name="search"></a>
+<a id="search"></a>
 # **Search**
-> PagedResourceListOfStorageObject Search (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null)
+> PagedResourceListOfStorageObject Search (SearchBody searchBody, string? page = null, List<string>? sortBy = null, int? limit = null, string? filter = null)
 
 [EARLY ACCESS] Search: Search for a file or folder with a given name and path
 
@@ -34,10 +33,10 @@ namespace Example
 
             var apiInstance = new SearchApi(config);
             var searchBody = new SearchBody(); // SearchBody | Search parameters
-            var page = page_example;  // string |  (optional) 
-            var sortBy = new List<string>(); // List<string> |  (optional) 
+            var page = "page_example";  // string? |  (optional) 
+            var sortBy = new List<string>?(); // List<string>? |  (optional) 
             var limit = 56;  // int? |  (optional) 
-            var filter = filter_example;  // string |  (optional)  (default to "")
+            var filter = "\"\"";  // string? |  (optional)  (default to "")
 
             try
             {
@@ -47,8 +46,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SearchApi.Search: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling SearchApi.Search: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -56,15 +55,35 @@ namespace Example
 }
 ```
 
+#### Using the SearchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // [EARLY ACCESS] Search: Search for a file or folder with a given name and path
+    ApiResponse<PagedResourceListOfStorageObject> response = apiInstance.SearchWithHttpInfo(searchBody, page, sortBy, limit, filter);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SearchApi.SearchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **searchBody** | [**SearchBody**](SearchBody.md)| Search parameters | 
- **page** | **string**|  | [optional] 
- **sortBy** | [**List&lt;string&gt;**](string.md)|  | [optional] 
- **limit** | **int?**|  | [optional] 
- **filter** | **string**|  | [optional] [default to &quot;&quot;]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **searchBody** | [**SearchBody**](SearchBody.md) | Search parameters |  |
+| **page** | **string?** |  | [optional]  |
+| **sortBy** | [**List&lt;string&gt;?**](string.md) |  | [optional]  |
+| **limit** | **int?** |  | [optional]  |
+| **filter** | **string?** |  | [optional] [default to &quot;&quot;] |
 
 ### Return type
 
