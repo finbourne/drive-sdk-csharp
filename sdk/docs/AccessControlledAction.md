@@ -1,4 +1,4 @@
-# Finbourne.Drive.Sdk.Model.AccessControlledAction
+# Lusid.Drive.Sdk.Model.AccessControlledAction
 
 ## Properties
 

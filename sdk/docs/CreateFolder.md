@@ -1,4 +1,4 @@
-# Finbourne.Drive.Sdk.Model.CreateFolder
+# Lusid.Drive.Sdk.Model.CreateFolder
 DTO representing the creation of a folder
 
 ## Properties

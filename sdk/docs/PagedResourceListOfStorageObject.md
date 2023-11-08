@@ -1,4 +1,4 @@
-# Finbourne.Drive.Sdk.Model.PagedResourceListOfStorageObject
+# Lusid.Drive.Sdk.Model.PagedResourceListOfStorageObject
 
 ## Properties
 

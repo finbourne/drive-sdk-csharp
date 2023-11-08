@@ -1,4 +1,4 @@
-# Finbourne.Drive.Sdk.Model.IdentifierPartSchema
+# Lusid.Drive.Sdk.Model.IdentifierPartSchema
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Finbourne.Drive.Sdk.Api.ApplicationMetadataApi
+# Lusid.Drive.Sdk.Api.ApplicationMetadataApi
 
 All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
@@ -18,9 +18,9 @@ Get the comprehensive set of resources that are available for access control
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Finbourne.Drive.Sdk.Api;
-using Finbourne.Drive.Sdk.Client;
-using Finbourne.Drive.Sdk.Model;
+using Lusid.Drive.Sdk.Api;
+using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Model;
 
 namespace Example
 {

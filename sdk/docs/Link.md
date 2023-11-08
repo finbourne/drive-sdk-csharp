@@ -1,4 +1,4 @@
-# Finbourne.Drive.Sdk.Model.Link
+# Lusid.Drive.Sdk.Model.Link
 
 ## Properties
 
