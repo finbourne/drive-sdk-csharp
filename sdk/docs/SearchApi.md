@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Api.SearchApi
+# Finbourne.Drive.Sdk.Api.SearchApi
 
 All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
@@ -16,9 +16,9 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
