@@ -40,7 +40,7 @@ namespace Finbourne.Drive.Sdk.Extensions
         public string ClientSecret { get;  set; }
 
         /// <summary>
-        /// Finbourne-drive Api Url
+        /// Lusid Api Url
         /// </summary>
         public string BaseUrl { get; set; }
 
