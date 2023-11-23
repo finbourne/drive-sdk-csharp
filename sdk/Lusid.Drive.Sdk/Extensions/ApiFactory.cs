@@ -89,7 +89,8 @@ namespace Lusid.Drive.Sdk.Extensions
         public ApiFactory(Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException(nameof(configuration));
-
+            configuration.MergeWithGlobalConfiguration();
+            
             _apis = Init(configuration);
         }
 

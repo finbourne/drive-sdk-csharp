@@ -26,6 +26,10 @@ namespace Lusid.Drive.Sdk
 
         internal DateTimeOrCutLabel(string parameter)
         {
+            if (parameter == null)
+            {
+                throw new ArgumentNullException(nameof(parameter));
+            }
             Parameter = parameter;
         }
 
