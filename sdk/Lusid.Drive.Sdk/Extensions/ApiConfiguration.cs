@@ -6,6 +6,7 @@
  */
 
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace Lusid.Drive.Sdk.Extensions
 {
@@ -42,6 +43,7 @@ namespace Lusid.Drive.Sdk.Extensions
         /// <summary>
         /// Lusid-drive Api Url
         /// </summary>
+        [ConfigurationKeyName("lusid-driveUrl")]
         public string BaseUrl { get; set; }
 
         /// <summary>
