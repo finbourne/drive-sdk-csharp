@@ -75,8 +75,10 @@ namespace Lusid.Drive.Sdk.Extensions
             {
                 BasePath = apiConfiguration.BaseUrl,
             };
-            
-            configuration.DefaultHeaders.Add("X-LUSID-Application", apiConfiguration.ApplicationName);
+            if(!String.IsNullOrWhiteSpace(apiConfiguration.ApplicationName))
+            {
+                configuration.DefaultHeaders.Add("X-LUSID-Application", apiConfiguration.ApplicationName);
+            }
             configuration.MergeWithGlobalConfiguration();
             
             _apis = Init(configuration);
