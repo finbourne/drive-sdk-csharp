@@ -6,6 +6,7 @@
  */
 
 using System.Collections.Generic;
+using Lusid.Drive.Sdk.Extensions;
 
 namespace Lusid.Drive.Sdk.Client
 {
