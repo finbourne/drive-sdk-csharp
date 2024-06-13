@@ -1,3 +1,5 @@
+![LUSID_by_Finbourne](./resources/Finbourne_Logo_Teal.svg)
+
 # LUSID<sup>®</sup> Drive release C# SDK
 
 The NuGet package for the LUSID Drive SDK can installed from https://www.nuget.org/packages/Lusid.Drive.Sdk using the following:
