@@ -21,36 +21,47 @@ All URIs are relative to *https://fbn-prd.lusid.com/drive*
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class CreateFolderExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new FoldersApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var createFolder = new CreateFolder(); // CreateFolder | A CreateFolder object that defines the name and path of the new folder
 
             try
             {
                 // [EARLY ACCESS] CreateFolder: Create a new folder in LUSID Drive
                 StorageObject result = apiInstance.CreateFolder(createFolder);
-                Debug.WriteLine(result);
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FoldersApi.CreateFolder: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FoldersApi.CreateFolder: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -65,15 +76,15 @@ try
 {
     // [EARLY ACCESS] CreateFolder: Create a new folder in LUSID Drive
     ApiResponse<StorageObject> response = apiInstance.CreateFolderWithHttpInfo(createFolder);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Console.WriteLine("Status Code: " + response.StatusCode);
+    Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
+    Console.WriteLine("Response Body: " + JsonConvert.SerializeObject(response.Data, Formatting.Indented));
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoldersApi.CreateFolderWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling FoldersApi.CreateFolderWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -86,10 +97,6 @@ catch (ApiException e)
 ### Return type
 
 [**StorageObject**](StorageObject.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -104,7 +111,7 @@ catch (ApiException e)
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 
 <a id="deletefolder"></a>
 # **DeleteFolder**
@@ -115,23 +122,34 @@ catch (ApiException e)
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class DeleteFolderExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new FoldersApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
 
             try
@@ -139,11 +157,11 @@ namespace Example
                 // [EARLY ACCESS] DeleteFolder: Delete a specified folder and all subfolders
                 apiInstance.DeleteFolder(id);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FoldersApi.DeleteFolder: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FoldersApi.DeleteFolder: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -161,9 +179,9 @@ try
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoldersApi.DeleteFolderWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling FoldersApi.DeleteFolderWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -176,10 +194,6 @@ catch (ApiException e)
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -195,7 +209,7 @@ void (empty response body)
 | **404** | No folder with this Id exists |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 
 <a id="getfolder"></a>
 # **GetFolder**
@@ -206,36 +220,47 @@ void (empty response body)
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class GetFolderExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new FoldersApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
 
             try
             {
                 // [EARLY ACCESS] GetFolder: Get metadata of folder
                 StorageObject result = apiInstance.GetFolder(id);
-                Debug.WriteLine(result);
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FoldersApi.GetFolder: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FoldersApi.GetFolder: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -250,15 +275,15 @@ try
 {
     // [EARLY ACCESS] GetFolder: Get metadata of folder
     ApiResponse<StorageObject> response = apiInstance.GetFolderWithHttpInfo(id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Console.WriteLine("Status Code: " + response.StatusCode);
+    Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
+    Console.WriteLine("Response Body: " + JsonConvert.SerializeObject(response.Data, Formatting.Indented));
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoldersApi.GetFolderWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling FoldersApi.GetFolderWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -271,10 +296,6 @@ catch (ApiException e)
 ### Return type
 
 [**StorageObject**](StorageObject.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -290,7 +311,7 @@ catch (ApiException e)
 | **404** | No folder with this Id exists |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 
 <a id="getfoldercontents"></a>
 # **GetFolderContents**
@@ -301,23 +322,34 @@ catch (ApiException e)
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class GetFolderContentsExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new FoldersApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
             var page = "page_example";  // string? | The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional) 
             var sortBy = new List<string>?(); // List<string>? | Order the results by these fields. Use use the '-' sign to denote descending order. (optional) 
@@ -329,13 +361,13 @@ namespace Example
             {
                 // [EARLY ACCESS] GetFolderContents: List contents of a folder
                 PagedResourceListOfStorageObject result = apiInstance.GetFolderContents(id, page, sortBy, start, limit, filter);
-                Debug.WriteLine(result);
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FoldersApi.GetFolderContents: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FoldersApi.GetFolderContents: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -350,15 +382,15 @@ try
 {
     // [EARLY ACCESS] GetFolderContents: List contents of a folder
     ApiResponse<PagedResourceListOfStorageObject> response = apiInstance.GetFolderContentsWithHttpInfo(id, page, sortBy, start, limit, filter);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Console.WriteLine("Status Code: " + response.StatusCode);
+    Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
+    Console.WriteLine("Response Body: " + JsonConvert.SerializeObject(response.Data, Formatting.Indented));
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoldersApi.GetFolderContentsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling FoldersApi.GetFolderContentsWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -377,10 +409,6 @@ catch (ApiException e)
 
 [**PagedResourceListOfStorageObject**](PagedResourceListOfStorageObject.md)
 
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -395,7 +423,7 @@ catch (ApiException e)
 | **404** | No folder with this Id exists |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 
 <a id="getrootfolder"></a>
 # **GetRootFolder**
@@ -406,23 +434,34 @@ catch (ApiException e)
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class GetRootFolderExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new FoldersApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var page = "page_example";  // string? | The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional) 
             var sortBy = new List<string>?(); // List<string>? | Order the results by these fields. Use use the '-' sign to denote descending order. (optional) 
             var start = 56;  // int? | When paginating, skip this number of results. (optional) 
@@ -433,13 +472,13 @@ namespace Example
             {
                 // [EARLY ACCESS] GetRootFolder: List contents of root folder
                 PagedResourceListOfStorageObject result = apiInstance.GetRootFolder(page, sortBy, start, limit, filter);
-                Debug.WriteLine(result);
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FoldersApi.GetRootFolder: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FoldersApi.GetRootFolder: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -454,15 +493,15 @@ try
 {
     // [EARLY ACCESS] GetRootFolder: List contents of root folder
     ApiResponse<PagedResourceListOfStorageObject> response = apiInstance.GetRootFolderWithHttpInfo(page, sortBy, start, limit, filter);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Console.WriteLine("Status Code: " + response.StatusCode);
+    Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
+    Console.WriteLine("Response Body: " + JsonConvert.SerializeObject(response.Data, Formatting.Indented));
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoldersApi.GetRootFolderWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling FoldersApi.GetRootFolderWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -480,10 +519,6 @@ catch (ApiException e)
 
 [**PagedResourceListOfStorageObject**](PagedResourceListOfStorageObject.md)
 
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -497,7 +532,7 @@ catch (ApiException e)
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 
 <a id="movefolder"></a>
 # **MoveFolder**
@@ -508,23 +543,34 @@ catch (ApiException e)
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class MoveFolderExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new FoldersApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder where the files should be moved
             var requestBody = new List<string>(); // List<string> | Enumerable of unique IDs of files that should be moved
             var overwrite = false;  // bool? | True if the destination has file with same name if should be overwritten (optional)  (default to false)
@@ -534,13 +580,13 @@ namespace Example
             {
                 // [EARLY ACCESS] MoveFolder: Move files to specified folder
                 PagedResourceListOfStorageObject result = apiInstance.MoveFolder(id, requestBody, overwrite, deleteSource);
-                Debug.WriteLine(result);
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FoldersApi.MoveFolder: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FoldersApi.MoveFolder: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -555,15 +601,15 @@ try
 {
     // [EARLY ACCESS] MoveFolder: Move files to specified folder
     ApiResponse<PagedResourceListOfStorageObject> response = apiInstance.MoveFolderWithHttpInfo(id, requestBody, overwrite, deleteSource);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Console.WriteLine("Status Code: " + response.StatusCode);
+    Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
+    Console.WriteLine("Response Body: " + JsonConvert.SerializeObject(response.Data, Formatting.Indented));
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoldersApi.MoveFolderWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling FoldersApi.MoveFolderWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -580,10 +626,6 @@ catch (ApiException e)
 
 [**PagedResourceListOfStorageObject**](PagedResourceListOfStorageObject.md)
 
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
@@ -599,7 +641,7 @@ catch (ApiException e)
 | **409** | There is already a file with the same name at this location |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 
 <a id="updatefolder"></a>
 # **UpdateFolder**
@@ -610,23 +652,34 @@ catch (ApiException e)
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class UpdateFolderExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new FoldersApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
             var updateFolder = new UpdateFolder(); // UpdateFolder | An UpdateFolder object that defines the new name or path of the folder
 
@@ -634,13 +687,13 @@ namespace Example
             {
                 // [EARLY ACCESS] UpdateFolder: Update an existing folder's name, path
                 StorageObject result = apiInstance.UpdateFolder(id, updateFolder);
-                Debug.WriteLine(result);
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling FoldersApi.UpdateFolder: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling FoldersApi.UpdateFolder: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -655,15 +708,15 @@ try
 {
     // [EARLY ACCESS] UpdateFolder: Update an existing folder's name, path
     ApiResponse<StorageObject> response = apiInstance.UpdateFolderWithHttpInfo(id, updateFolder);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Console.WriteLine("Status Code: " + response.StatusCode);
+    Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
+    Console.WriteLine("Response Body: " + JsonConvert.SerializeObject(response.Data, Formatting.Indented));
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoldersApi.UpdateFolderWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling FoldersApi.UpdateFolderWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -677,10 +730,6 @@ catch (ApiException e)
 ### Return type
 
 [**StorageObject**](StorageObject.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -696,5 +745,5 @@ catch (ApiException e)
 | **404** | No folder with this Id exists |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 

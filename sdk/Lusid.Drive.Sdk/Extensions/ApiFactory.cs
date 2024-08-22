@@ -65,7 +65,7 @@ namespace Lusid.Drive.Sdk.Extensions
                 if (string.IsNullOrWhiteSpace(apiConfiguration.BaseUrl))
                     throw new ArgumentNullException(
                         nameof(apiConfiguration.BaseUrl),
-                        $"BaseUrl Uri missing. Please specify either FBN_LUSID-DRIVE_API_URL environment variable or lusid-driveUrl in secrets.json.");
+                        $"BaseUrl Uri missing. Please specify either FBN_DRIVE_URL environment variable or driveUrl in secrets.json.");
 
                 throw new UriFormatException($"Invalid Uri: {apiConfiguration.BaseUrl}");
             }

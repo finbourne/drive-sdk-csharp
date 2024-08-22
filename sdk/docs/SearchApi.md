@@ -15,23 +15,34 @@ All URIs are relative to *https://fbn-prd.lusid.com/drive*
 ### Example
 ```csharp
 using System.Collections.Generic;
-using System.Diagnostics;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
+using Newtonsoft.Json;
 
-namespace Example
+namespace Examples
 {
-    public class SearchExample
+    public static class Program
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://fbn-prd.lusid.com/drive";
-            // Configure OAuth2 access token for authorization: oauth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new SearchApi(config);
+            var secretsFilename = "secrets.json";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), secretsFilename);
+            // Replace with the relevant values
+            File.WriteAllText(
+                path, 
+                @"{
+                    ""api"": {
+                        ""tokenUrl"": ""<your-token-url>"",
+                        ""driveUrl"": ""https://<your-domain>.lusid.com/drive"",
+                        ""username"": ""<your-username>"",
+                        ""password"": ""<your-password>"",
+                        ""clientId"": ""<your-client-id>"",
+                        ""clientSecret"": ""<your-client-secret>""
+                    }
+                }");
+            var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<SearchApi>();
             var searchBody = new SearchBody(); // SearchBody | Search parameters
             var page = "page_example";  // string? |  (optional) 
             var sortBy = new List<string>?(); // List<string>? |  (optional) 
@@ -42,13 +53,13 @@ namespace Example
             {
                 // [EARLY ACCESS] Search: Search for a file or folder with a given name and path
                 PagedResourceListOfStorageObject result = apiInstance.Search(searchBody, page, sortBy, limit, filter);
-                Debug.WriteLine(result);
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling SearchApi.Search: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
+                Console.WriteLine("Exception when calling SearchApi.Search: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
@@ -63,15 +74,15 @@ try
 {
     // [EARLY ACCESS] Search: Search for a file or folder with a given name and path
     ApiResponse<PagedResourceListOfStorageObject> response = apiInstance.SearchWithHttpInfo(searchBody, page, sortBy, limit, filter);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    Console.WriteLine("Status Code: " + response.StatusCode);
+    Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
+    Console.WriteLine("Response Body: " + JsonConvert.SerializeObject(response.Data, Formatting.Indented));
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling SearchApi.SearchWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
+    Console.WriteLine("Exception when calling SearchApi.SearchWithHttpInfo: " + e.Message);
+    Console.WriteLine("Status Code: " + e.ErrorCode);
+    Console.WriteLine(e.StackTrace);
 }
 ```
 
@@ -89,10 +100,6 @@ catch (ApiException e)
 
 [**PagedResourceListOfStorageObject**](PagedResourceListOfStorageObject.md)
 
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
@@ -106,5 +113,5 @@ catch (ApiException e)
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[Back to top](#) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to Model list](../README.md#documentation-for-models) &#8226; [Back to README](../README.md)
 
