@@ -7,8 +7,8 @@ All URIs are relative to *https://fbn-prd.lusid.com/drive*
 | [**CreateFolder**](FoldersApi.md#createfolder) | **POST** /api/folders | [EARLY ACCESS] CreateFolder: Create a new folder in LUSID Drive |
 | [**DeleteFolder**](FoldersApi.md#deletefolder) | **DELETE** /api/folders/{id} | [EARLY ACCESS] DeleteFolder: Delete a specified folder and all subfolders |
 | [**GetFolder**](FoldersApi.md#getfolder) | **GET** /api/folders/{id} | [EARLY ACCESS] GetFolder: Get metadata of folder |
-| [**GetFolderContents**](FoldersApi.md#getfoldercontents) | **GET** /api/folders/{id}/contents | [EARLY ACCESS] GetFolderContents: List contents of a folder |
-| [**GetRootFolder**](FoldersApi.md#getrootfolder) | **GET** /api/folders | [EARLY ACCESS] GetRootFolder: List contents of root folder |
+| [**GetFolderContents**](FoldersApi.md#getfoldercontents) | **GET** /api/folders/{id}/contents | GetFolderContents: List contents of a folder |
+| [**GetRootFolder**](FoldersApi.md#getrootfolder) | **GET** /api/folders | GetRootFolder: List contents of root folder |
 | [**MoveFolder**](FoldersApi.md#movefolder) | **POST** /api/folders/{id} | [EARLY ACCESS] MoveFolder: Move files to specified folder |
 | [**UpdateFolder**](FoldersApi.md#updatefolder) | **PUT** /api/folders/{id} | [EARLY ACCESS] UpdateFolder: Update an existing folder&#39;s name, path |
 
@@ -317,7 +317,7 @@ catch (ApiException e)
 # **GetFolderContents**
 > PagedResourceListOfStorageObject GetFolderContents (string id, string? page = null, List<string>? sortBy = null, int? start = null, int? limit = null, string? filter = null)
 
-[EARLY ACCESS] GetFolderContents: List contents of a folder
+GetFolderContents: List contents of a folder
 
 ### Example
 ```csharp
@@ -359,7 +359,7 @@ namespace Examples
 
             try
             {
-                // [EARLY ACCESS] GetFolderContents: List contents of a folder
+                // GetFolderContents: List contents of a folder
                 PagedResourceListOfStorageObject result = apiInstance.GetFolderContents(id, page, sortBy, start, limit, filter);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
@@ -380,7 +380,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // [EARLY ACCESS] GetFolderContents: List contents of a folder
+    // GetFolderContents: List contents of a folder
     ApiResponse<PagedResourceListOfStorageObject> response = apiInstance.GetFolderContentsWithHttpInfo(id, page, sortBy, start, limit, filter);
     Console.WriteLine("Status Code: " + response.StatusCode);
     Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));
@@ -429,7 +429,7 @@ catch (ApiException e)
 # **GetRootFolder**
 > PagedResourceListOfStorageObject GetRootFolder (string? page = null, List<string>? sortBy = null, int? start = null, int? limit = null, string? filter = null)
 
-[EARLY ACCESS] GetRootFolder: List contents of root folder
+GetRootFolder: List contents of root folder
 
 ### Example
 ```csharp
@@ -470,7 +470,7 @@ namespace Examples
 
             try
             {
-                // [EARLY ACCESS] GetRootFolder: List contents of root folder
+                // GetRootFolder: List contents of root folder
                 PagedResourceListOfStorageObject result = apiInstance.GetRootFolder(page, sortBy, start, limit, filter);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
             }
@@ -491,7 +491,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // [EARLY ACCESS] GetRootFolder: List contents of root folder
+    // GetRootFolder: List contents of root folder
     ApiResponse<PagedResourceListOfStorageObject> response = apiInstance.GetRootFolderWithHttpInfo(page, sortBy, start, limit, filter);
     Console.WriteLine("Status Code: " + response.StatusCode);
     Console.WriteLine("Response Headers: " + JsonConvert.SerializeObject(response.Headers, Formatting.Indented));

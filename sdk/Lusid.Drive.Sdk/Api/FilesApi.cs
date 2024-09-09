@@ -31,7 +31,7 @@ namespace Lusid.Drive.Sdk.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xLusidDriveFilename">File name.</param>
@@ -43,7 +43,7 @@ namespace Lusid.Drive.Sdk.Api
         StorageObject CreateFile(string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body, int operationIndex = 0);
 
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
         /// </summary>
         /// <remarks>
         /// 
@@ -77,7 +77,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteFileWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive.
+        /// DownloadFile: Download the file from Drive.
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the file to be downloaded.</param>
@@ -86,7 +86,7 @@ namespace Lusid.Drive.Sdk.Api
         System.IO.Stream DownloadFile(string id, int operationIndex = 0);
 
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive.
+        /// DownloadFile: Download the file from Drive.
         /// </summary>
         /// <remarks>
         /// 
@@ -172,7 +172,7 @@ namespace Lusid.Drive.Sdk.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
         /// </summary>
         /// <remarks>
         /// 
@@ -188,7 +188,7 @@ namespace Lusid.Drive.Sdk.Api
         System.Threading.Tasks.Task<StorageObject> CreateFileAsync(string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
         /// </summary>
         /// <remarks>
         /// 
@@ -228,7 +228,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive.
+        /// DownloadFile: Download the file from Drive.
         /// </summary>
         /// <remarks>
         /// 
@@ -241,7 +241,7 @@ namespace Lusid.Drive.Sdk.Api
         System.Threading.Tasks.Task<System.IO.Stream> DownloadFileAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive.
+        /// DownloadFile: Download the file from Drive.
         /// </summary>
         /// <remarks>
         /// 
@@ -451,7 +451,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xLusidDriveFilename">File name.</param>
@@ -467,7 +467,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xLusidDriveFilename">File name.</param>
@@ -561,7 +561,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xLusidDriveFilename">File name.</param>
@@ -578,7 +578,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
+        /// CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xLusidDriveFilename">File name.</param>
@@ -853,7 +853,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive. 
+        /// DownloadFile: Download the file from Drive. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the file to be downloaded.</param>
@@ -866,7 +866,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive. 
+        /// DownloadFile: Download the file from Drive. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the file to be downloaded.</param>
@@ -941,7 +941,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive. 
+        /// DownloadFile: Download the file from Drive. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the file to be downloaded.</param>
@@ -955,7 +955,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] DownloadFile: Download the file from Drive. 
+        /// DownloadFile: Download the file from Drive. 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier of the file to be downloaded.</param>

@@ -91,7 +91,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>ApiResponse of StorageObject</returns>
         ApiResponse<StorageObject> GetFolderWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder
+        /// GetFolderContents: List contents of a folder
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
@@ -105,7 +105,7 @@ namespace Lusid.Drive.Sdk.Api
         PagedResourceListOfStorageObject GetFolderContents(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0);
 
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder
+        /// GetFolderContents: List contents of a folder
         /// </summary>
         /// <remarks>
         /// 
@@ -121,7 +121,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
         ApiResponse<PagedResourceListOfStorageObject> GetFolderContentsWithHttpInfo(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0);
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder
+        /// GetRootFolder: List contents of root folder
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
@@ -134,7 +134,7 @@ namespace Lusid.Drive.Sdk.Api
         PagedResourceListOfStorageObject GetRootFolder(string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0);
 
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder
+        /// GetRootFolder: List contents of root folder
         /// </summary>
         /// <remarks>
         /// 
@@ -281,7 +281,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>Task of ApiResponse (StorageObject)</returns>
         System.Threading.Tasks.Task<ApiResponse<StorageObject>> GetFolderWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder
+        /// GetFolderContents: List contents of a folder
         /// </summary>
         /// <remarks>
         /// 
@@ -299,7 +299,7 @@ namespace Lusid.Drive.Sdk.Api
         System.Threading.Tasks.Task<PagedResourceListOfStorageObject> GetFolderContentsAsync(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder
+        /// GetFolderContents: List contents of a folder
         /// </summary>
         /// <remarks>
         /// 
@@ -316,7 +316,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
         System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> GetFolderContentsWithHttpInfoAsync(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder
+        /// GetRootFolder: List contents of root folder
         /// </summary>
         /// <remarks>
         /// 
@@ -333,7 +333,7 @@ namespace Lusid.Drive.Sdk.Api
         System.Threading.Tasks.Task<PagedResourceListOfStorageObject> GetRootFolderAsync(string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder
+        /// GetRootFolder: List contents of root folder
         /// </summary>
         /// <remarks>
         /// 
@@ -1064,7 +1064,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder 
+        /// GetFolderContents: List contents of a folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
@@ -1082,7 +1082,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder 
+        /// GetFolderContents: List contents of a folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
@@ -1182,7 +1182,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder 
+        /// GetFolderContents: List contents of a folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
@@ -1201,7 +1201,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetFolderContents: List contents of a folder 
+        /// GetFolderContents: List contents of a folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
@@ -1304,7 +1304,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder 
+        /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
@@ -1321,7 +1321,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder 
+        /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
@@ -1413,7 +1413,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder 
+        /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
@@ -1431,7 +1431,7 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] GetRootFolder: List contents of root folder 
+        /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
