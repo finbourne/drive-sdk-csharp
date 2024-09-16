@@ -18,6 +18,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using Lusid.Drive.Sdk.Client;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Client.Auth;
 using Lusid.Drive.Sdk.Model;
 
@@ -40,8 +41,9 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>PagedResourceListOfStorageObject</returns>
-        PagedResourceListOfStorageObject Search(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0);
+        PagedResourceListOfStorageObject Search(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
 
         /// <summary>
         /// [EARLY ACCESS] Search: Search for a file or folder with a given name and path
@@ -56,8 +58,9 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        ApiResponse<PagedResourceListOfStorageObject> SearchWithHttpInfo(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0);
+        ApiResponse<PagedResourceListOfStorageObject> SearchWithHttpInfo(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
         #endregion Synchronous Operations
     }
 
@@ -81,8 +84,9 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>Task of PagedResourceListOfStorageObject</returns>
-        System.Threading.Tasks.Task<PagedResourceListOfStorageObject> SearchAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PagedResourceListOfStorageObject> SearchAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
 
         /// <summary>
         /// [EARLY ACCESS] Search: Search for a file or folder with a given name and path
@@ -98,8 +102,9 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> SearchWithHttpInfoAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> SearchWithHttpInfoAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         #endregion Asynchronous Operations
     }
 
@@ -132,9 +137,15 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns></returns>
         public SearchApi(string basePath)
         {
+            var globalConfiguration = Lusid.Drive.Sdk.Client.GlobalConfiguration.Instance;
             this.Configuration = Lusid.Drive.Sdk.Client.Configuration.MergeConfigurations(
-                Lusid.Drive.Sdk.Client.GlobalConfiguration.Instance,
-                new Lusid.Drive.Sdk.Client.Configuration { BasePath = basePath }
+                globalConfiguration,
+                new Lusid.Drive.Sdk.Client.Configuration
+                {
+                    BasePath = basePath,
+                    TimeoutMs = globalConfiguration.TimeoutMs,
+                    RateLimitRetries = globalConfiguration.RateLimitRetries
+                }
             );
             this.Client = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
             this.AsynchronousClient = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
@@ -227,10 +238,11 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>PagedResourceListOfStorageObject</returns>
-        public PagedResourceListOfStorageObject Search(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0)
+        public PagedResourceListOfStorageObject Search(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null)
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = SearchWithHttpInfo(searchBody, page, sortBy, limit, filter);
+            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = SearchWithHttpInfo(searchBody, page, sortBy, limit, filter, opts: opts);
             return localVarResponse.Data;
         }
 
@@ -244,8 +256,9 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="limit"> (optional)</param>
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> SearchWithHttpInfo(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0)
+        public Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> SearchWithHttpInfo(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null)
         {
             // verify the required parameter 'searchBody' is set
             if (searchBody == null)
@@ -254,6 +267,16 @@ namespace Lusid.Drive.Sdk.Api
             }
 
             Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+
+            if (opts is { TimeoutMs: not null })
+            {
+                localVarRequestOptions.TimeoutMs = opts.TimeoutMs.Value;
+            }
+            
+            if (opts is { RateLimitRetries: not null })
+            {
+                localVarRequestOptions.RateLimitRetries = opts.RateLimitRetries.Value;
+            }
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -341,10 +364,11 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>Task of PagedResourceListOfStorageObject</returns>
-        public async System.Threading.Tasks.Task<PagedResourceListOfStorageObject> SearchAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PagedResourceListOfStorageObject> SearchAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null)
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await SearchWithHttpInfoAsync(searchBody, page, sortBy, limit, filter, operationIndex, cancellationToken).ConfigureAwait(false);
+            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await SearchWithHttpInfoAsync(searchBody, page, sortBy, limit, filter, operationIndex, cancellationToken, opts).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -359,8 +383,9 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="filter"> (optional, default to &quot;&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> SearchWithHttpInfoAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> SearchWithHttpInfoAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null)
         {
             // verify the required parameter 'searchBody' is set
             if (searchBody == null)
@@ -370,6 +395,16 @@ namespace Lusid.Drive.Sdk.Api
 
 
             Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+
+            if (opts is { TimeoutMs: not null })
+            {
+                localVarRequestOptions.TimeoutMs = opts.TimeoutMs.Value;
+            }
+            
+            if (opts is { RateLimitRetries: not null })
+            {
+                localVarRequestOptions.RateLimitRetries = opts.RateLimitRetries.Value;
+            }
 
             string[] _contentTypes = new string[] {
                 "application/json"

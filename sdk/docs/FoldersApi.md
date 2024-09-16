@@ -48,11 +48,22 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FoldersApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var createFolder = new CreateFolder(); // CreateFolder | A CreateFolder object that defines the name and path of the new folder
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // StorageObject result = apiInstance.CreateFolder(createFolder, opts: opts);
+
                 // [EARLY ACCESS] CreateFolder: Create a new folder in LUSID Drive
                 StorageObject result = apiInstance.CreateFolder(createFolder);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -149,11 +160,22 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FoldersApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // apiInstance.DeleteFolder(id, opts: opts);
+
                 // [EARLY ACCESS] DeleteFolder: Delete a specified folder and all subfolders
                 apiInstance.DeleteFolder(id);
             }
@@ -247,11 +269,22 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FoldersApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // StorageObject result = apiInstance.GetFolder(id, opts: opts);
+
                 // [EARLY ACCESS] GetFolder: Get metadata of folder
                 StorageObject result = apiInstance.GetFolder(id);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -349,6 +382,14 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FoldersApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
             var page = "page_example";  // string? | The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional) 
@@ -359,6 +400,9 @@ namespace Examples
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // PagedResourceListOfStorageObject result = apiInstance.GetFolderContents(id, page, sortBy, start, limit, filter, opts: opts);
+
                 // GetFolderContents: List contents of a folder
                 PagedResourceListOfStorageObject result = apiInstance.GetFolderContents(id, page, sortBy, start, limit, filter);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -461,6 +505,14 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FoldersApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var page = "page_example";  // string? | The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional) 
             var sortBy = new List<string>?(); // List<string>? | Order the results by these fields. Use use the '-' sign to denote descending order. (optional) 
@@ -470,6 +522,9 @@ namespace Examples
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // PagedResourceListOfStorageObject result = apiInstance.GetRootFolder(page, sortBy, start, limit, filter, opts: opts);
+
                 // GetRootFolder: List contents of root folder
                 PagedResourceListOfStorageObject result = apiInstance.GetRootFolder(page, sortBy, start, limit, filter);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -570,6 +625,14 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FoldersApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder where the files should be moved
             var requestBody = new List<string>(); // List<string> | Enumerable of unique IDs of files that should be moved
@@ -578,6 +641,9 @@ namespace Examples
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // PagedResourceListOfStorageObject result = apiInstance.MoveFolder(id, requestBody, overwrite, deleteSource, opts: opts);
+
                 // [EARLY ACCESS] MoveFolder: Move files to specified folder
                 PagedResourceListOfStorageObject result = apiInstance.MoveFolder(id, requestBody, overwrite, deleteSource);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -679,12 +745,23 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FoldersApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FoldersApi>();
             var id = "id_example";  // string | Unique ID of the folder
             var updateFolder = new UpdateFolder(); // UpdateFolder | An UpdateFolder object that defines the new name or path of the folder
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // StorageObject result = apiInstance.UpdateFolder(id, updateFolder, opts: opts);
+
                 // [EARLY ACCESS] UpdateFolder: Update an existing folder's name, path
                 StorageObject result = apiInstance.UpdateFolder(id, updateFolder);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));

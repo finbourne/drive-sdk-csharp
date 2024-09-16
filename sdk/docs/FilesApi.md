@@ -47,6 +47,14 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FilesApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FilesApi>();
             var xLusidDriveFilename = "xLusidDriveFilename_example";  // string | File name.
             var xLusidDrivePath = "xLusidDrivePath_example";  // string | File path.
@@ -55,6 +63,9 @@ namespace Examples
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // StorageObject result = apiInstance.CreateFile(xLusidDriveFilename, xLusidDrivePath, contentLength, body, opts: opts);
+
                 // CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
                 StorageObject result = apiInstance.CreateFile(xLusidDriveFilename, xLusidDrivePath, contentLength, body);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -154,11 +165,22 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FilesApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FilesApi>();
             var id = "id_example";  // string | Identifier of the file to be deleted.
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // apiInstance.DeleteFile(id, opts: opts);
+
                 // [EARLY ACCESS] DeleteFile: Deletes a file from Drive.
                 apiInstance.DeleteFile(id);
             }
@@ -251,11 +273,22 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FilesApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FilesApi>();
             var id = "id_example";  // string | Identifier of the file to be downloaded.
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // System.IO.Stream result = apiInstance.DownloadFile(id, opts: opts);
+
                 // DownloadFile: Download the file from Drive.
                 System.IO.Stream result = apiInstance.DownloadFile(id);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -354,11 +387,22 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FilesApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FilesApi>();
             var id = "id_example";  // string | Identifier of the file to be retrieved.
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // StorageObject result = apiInstance.GetFile(id, opts: opts);
+
                 // [EARLY ACCESS] GetFile: Get a file stored in Drive.
                 StorageObject result = apiInstance.GetFile(id);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -455,6 +499,14 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FilesApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FilesApi>();
             var id = "id_example";  // string | The unique file identifier
             var contentLength = 56;  // int | The size in bytes of the file to be uploaded
@@ -462,6 +514,9 @@ namespace Examples
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // StorageObject result = apiInstance.UpdateFileContents(id, contentLength, body, opts: opts);
+
                 // [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.
                 StorageObject result = apiInstance.UpdateFileContents(id, contentLength, body);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
@@ -560,12 +615,23 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<FilesApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FilesApi>();
             var id = "id_example";  // string | Identifier of the file to be updated
             var updateFile = new UpdateFile(); // UpdateFile | Update to be applied to file
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // StorageObject result = apiInstance.UpdateFileMetadata(id, updateFile, opts: opts);
+
                 // [EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive.
                 StorageObject result = apiInstance.UpdateFileMetadata(id, updateFile);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));

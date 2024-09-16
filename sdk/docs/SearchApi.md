@@ -42,6 +42,14 @@ namespace Examples
                         ""clientSecret"": ""<your-client-secret>""
                     }
                 }");
+
+            // uncomment the below to use configuration overrides
+            // var opts = new ConfigurationOptions();
+            // opts.TimeoutMs = 30_000;
+
+            // uncomment the below to use an api factory with overrides
+            // var apiInstance = ApiFactoryBuilder.Build(secretsFilename, opts: opts).Api<SearchApi>();
+
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<SearchApi>();
             var searchBody = new SearchBody(); // SearchBody | Search parameters
             var page = "page_example";  // string? |  (optional) 
@@ -51,6 +59,9 @@ namespace Examples
 
             try
             {
+                // uncomment the below to set overrides at the request level
+                // PagedResourceListOfStorageObject result = apiInstance.Search(searchBody, page, sortBy, limit, filter, opts: opts);
+
                 // [EARLY ACCESS] Search: Search for a file or folder with a given name and path
                 PagedResourceListOfStorageObject result = apiInstance.Search(searchBody, page, sortBy, limit, filter);
                 Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
