@@ -10,6 +10,7 @@
         <Description>LUSID Drive SDK</Description>
         <RepositoryUrl>https://github.com/finbourne/drive-sdk-csharp-release</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -35,5 +36,9 @@
         <PackageReference Include="RestSharp" Version="106.11.7" />
         <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
     </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../../LICENSE.md" Pack="true" PackagePath="LICENSE.md"/>
+    </ItemGroup>	
 
 </Project>
