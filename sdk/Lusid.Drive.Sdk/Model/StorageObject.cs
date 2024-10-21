@@ -364,15 +364,15 @@ namespace Lusid.Drive.Sdk.Model
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Id (string) maxLength
-            if (this.Id != null && this.Id.Length > 40)
+            if (this.Id != null && this.Id.Length > 36)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be less than 40.", new [] { "Id" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be less than 36.", new [] { "Id" });
             }
 
             // Id (string) minLength
-            if (this.Id != null && this.Id.Length < 30)
+            if (this.Id != null && this.Id.Length < 36)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be greater than 30.", new [] { "Id" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Id, length must be greater than 36.", new [] { "Id" });
             }
 
             // Id (string) pattern
