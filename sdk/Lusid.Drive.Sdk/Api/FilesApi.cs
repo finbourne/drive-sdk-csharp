@@ -17,7 +17,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Lusid.Drive.Sdk.Client;
+using IApiAccessor = Lusid.Drive.Sdk.Client.IApiAccessor;
 using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Client.Auth;
 using Lusid.Drive.Sdk.Model;
@@ -58,7 +58,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        ApiResponse<StorageObject> CreateFileWithHttpInfo(string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> CreateFileWithHttpInfo(string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] DeleteFile: Deletes a file from Drive.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteFileWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<Object> DeleteFileWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// DownloadFile: Download the file from Drive.
         /// </summary>
@@ -102,7 +102,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> DownloadFileWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<System.IO.Stream> DownloadFileWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] GetFile: Get a file stored in Drive.
         /// </summary>
@@ -124,7 +124,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        ApiResponse<StorageObject> GetFileWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> GetFileWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.
         /// </summary>
@@ -150,7 +150,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        ApiResponse<StorageObject> UpdateFileContentsWithHttpInfo(string id, int contentLength, byte[] body, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> UpdateFileContentsWithHttpInfo(string id, int contentLength, byte[] body, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive.
         /// </summary>
@@ -174,7 +174,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        ApiResponse<StorageObject> UpdateFileMetadataWithHttpInfo(string id, UpdateFile updateFile, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> UpdateFileMetadataWithHttpInfo(string id, UpdateFile updateFile, int operationIndex = 0, ConfigurationOptions? opts = null);
         #endregion Synchronous Operations
     }
 
@@ -216,7 +216,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageObject>> CreateFileWithHttpInfoAsync(string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> CreateFileWithHttpInfoAsync(string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] DeleteFile: Deletes a file from Drive.
         /// </summary>
@@ -243,7 +243,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<Object>> DeleteFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// DownloadFile: Download the file from Drive.
         /// </summary>
@@ -270,7 +270,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<System.IO.Stream>> DownloadFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] GetFile: Get a file stored in Drive.
         /// </summary>
@@ -297,7 +297,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageObject>> GetFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> GetFileWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.
         /// </summary>
@@ -328,7 +328,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageObject>> UpdateFileContentsWithHttpInfoAsync(string id, int contentLength, byte[] body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> UpdateFileContentsWithHttpInfoAsync(string id, int contentLength, byte[] body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive.
         /// </summary>
@@ -357,7 +357,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageObject>> UpdateFileMetadataWithHttpInfoAsync(string id, UpdateFile updateFile, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> UpdateFileMetadataWithHttpInfoAsync(string id, UpdateFile updateFile, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         #endregion Asynchronous Operations
     }
 

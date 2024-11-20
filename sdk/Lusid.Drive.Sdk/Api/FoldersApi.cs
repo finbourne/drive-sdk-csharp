@@ -17,7 +17,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Lusid.Drive.Sdk.Client;
+using IApiAccessor = Lusid.Drive.Sdk.Client.IApiAccessor;
 using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Client.Auth;
 using Lusid.Drive.Sdk.Model;
@@ -52,7 +52,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        ApiResponse<StorageObject> CreateFolderWithHttpInfo(CreateFolder createFolder, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> CreateFolderWithHttpInfo(CreateFolder createFolder, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] DeleteFolder: Delete a specified folder and all subfolders
         /// </summary>
@@ -74,7 +74,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteFolderWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<Object> DeleteFolderWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] GetFolder: Get metadata of folder
         /// </summary>
@@ -96,7 +96,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        ApiResponse<StorageObject> GetFolderWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> GetFolderWithHttpInfo(string id, int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// GetFolderContents: List contents of a folder
         /// </summary>
@@ -128,7 +128,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        ApiResponse<PagedResourceListOfStorageObject> GetFolderContentsWithHttpInfo(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> GetFolderContentsWithHttpInfo(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// GetRootFolder: List contents of root folder
         /// </summary>
@@ -158,7 +158,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        ApiResponse<PagedResourceListOfStorageObject> GetRootFolderWithHttpInfo(string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> GetRootFolderWithHttpInfo(string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] MoveFolder: Move files to specified folder
         /// </summary>
@@ -186,7 +186,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        ApiResponse<PagedResourceListOfStorageObject> MoveFolderWithHttpInfo(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?), int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> MoveFolderWithHttpInfo(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?), int operationIndex = 0, ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] UpdateFolder: Update an existing folder&#39;s name, path
         /// </summary>
@@ -210,7 +210,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        ApiResponse<StorageObject> UpdateFolderWithHttpInfo(string id, UpdateFolder updateFolder, int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> UpdateFolderWithHttpInfo(string id, UpdateFolder updateFolder, int operationIndex = 0, ConfigurationOptions? opts = null);
         #endregion Synchronous Operations
     }
 
@@ -246,7 +246,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageObject>> CreateFolderWithHttpInfoAsync(CreateFolder createFolder, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> CreateFolderWithHttpInfoAsync(CreateFolder createFolder, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] DeleteFolder: Delete a specified folder and all subfolders
         /// </summary>
@@ -273,7 +273,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFolderWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<Object>> DeleteFolderWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] GetFolder: Get metadata of folder
         /// </summary>
@@ -300,7 +300,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageObject>> GetFolderWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> GetFolderWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// GetFolderContents: List contents of a folder
         /// </summary>
@@ -337,7 +337,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> GetFolderContentsWithHttpInfoAsync(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> GetFolderContentsWithHttpInfoAsync(string id, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// GetRootFolder: List contents of root folder
         /// </summary>
@@ -372,7 +372,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> GetRootFolderWithHttpInfoAsync(string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> GetRootFolderWithHttpInfoAsync(string? page = default(string?), List<string>? sortBy = default(List<string>?), int? start = default(int?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] MoveFolder: Move files to specified folder
         /// </summary>
@@ -405,7 +405,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> MoveFolderWithHttpInfoAsync(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> MoveFolderWithHttpInfoAsync(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         /// <summary>
         /// [EARLY ACCESS] UpdateFolder: Update an existing folder&#39;s name, path
         /// </summary>
@@ -434,7 +434,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StorageObject>> UpdateFolderWithHttpInfoAsync(string id, UpdateFolder updateFolder, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> UpdateFolderWithHttpInfoAsync(string id, UpdateFolder updateFolder, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         #endregion Asynchronous Operations
     }
 

@@ -17,7 +17,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Lusid.Drive.Sdk.Client;
+using IApiAccessor = Lusid.Drive.Sdk.Client.IApiAccessor;
 using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Client.Auth;
 using Lusid.Drive.Sdk.Model;
@@ -60,7 +60,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        ApiResponse<PagedResourceListOfStorageObject> SearchWithHttpInfo(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
+        Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> SearchWithHttpInfo(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, ConfigurationOptions? opts = null);
         #endregion Synchronous Operations
     }
 
@@ -104,7 +104,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <param name="opts">Options for this request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> SearchWithHttpInfoAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
+        System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> SearchWithHttpInfoAsync(SearchBody searchBody, string? page = default(string?), List<string>? sortBy = default(List<string>?), int? limit = default(int?), string? filter = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken), ConfigurationOptions? opts = null);
         #endregion Asynchronous Operations
     }
 
