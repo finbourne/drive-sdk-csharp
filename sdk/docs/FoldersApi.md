@@ -339,7 +339,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | The details of the input related failure |  -  |
 | **404** | No folder with this Id exists |  -  |
 | **0** | Error response |  -  |
@@ -462,7 +462,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | The details of the input related failure |  -  |
 | **404** | No folder with this Id exists |  -  |
 | **0** | Error response |  -  |
@@ -583,7 +583,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
@@ -701,7 +701,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | The details of the input related failure |  -  |
 | **404** | No folder or file with the supplied Id exists |  -  |
 | **409** | There is already a file with the same name at this location |  -  |
@@ -817,7 +817,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Success |  -  |
+| **200** | OK |  -  |
 | **400** | The details of the input related failure |  -  |
 | **404** | No folder with this Id exists |  -  |
 | **0** | Error response |  -  |
