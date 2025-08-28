@@ -18,5 +18,33 @@ Name | Type | Description | Notes
 **StatusDetail** | **string** | Detailed description describing any negative terminal state of file | [optional] 
 **Links** | [**List&lt;Link&gt;**](Link.md) |  | [optional] 
 
-[Back to Model list](../README.md#documentation-for-models) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to README](../README.md)
+```csharp
+using Lusid.Drive.Sdk.Model;
+using System;
 
+string id = "id";
+string path = "path";
+string name = "name";
+string createdBy = "createdBy";
+string updatedBy = "updatedBy";
+string type = "type";
+string status = "example status";
+string statusDetail = "example statusDetail";
+List<Link> links = new List<Link>();
+
+StorageObject storageObjectInstance = new StorageObject(
+    id: id,
+    path: path,
+    name: name,
+    createdBy: createdBy,
+    createdOn: createdOn,
+    updatedBy: updatedBy,
+    updatedOn: updatedOn,
+    type: type,
+    size: size,
+    status: status,
+    statusDetail: statusDetail,
+    links: links);
+```
+
+[Back to Model list](../README.md#documentation-for-models) &#8226; [Back to API list](../README.md#documentation-for-api-endpoints) &#8226; [Back to README](../README.md)
