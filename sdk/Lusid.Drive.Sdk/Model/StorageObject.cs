@@ -45,7 +45,7 @@ namespace Lusid.Drive.Sdk.Model
         /// <param name="updatedOn">Date of file/folder modification (required).</param>
         /// <param name="type">Type of storage object (file or folder) (required).</param>
         /// <param name="size">Size of the file in bytes.</param>
-        /// <param name="status">File status corresponding to virus scan status.  (Active, Available, Checking, MalwareDetected, Failed).</param>
+        /// <param name="status">File status corresponding to virus scan status. (Active, Available, Checking, MalwareDetected, Failed).</param>
         /// <param name="statusDetail">Detailed description describing any negative terminal state of file.</param>
         /// <param name="links">links.</param>
         public StorageObject(string id = default(string), string path = default(string), string name = default(string), string createdBy = default(string), DateTimeOffset createdOn = default(DateTimeOffset), string updatedBy = default(string), DateTimeOffset updatedOn = default(DateTimeOffset), string type = default(string), int? size = default(int?), string status = default(string), string statusDetail = default(string), List<Link> links = default(List<Link>))
@@ -158,9 +158,9 @@ namespace Lusid.Drive.Sdk.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// File status corresponding to virus scan status.  (Active, Available, Checking, MalwareDetected, Failed)
+        /// File status corresponding to virus scan status. (Active, Available, Checking, MalwareDetected, Failed)
         /// </summary>
-        /// <value>File status corresponding to virus scan status.  (Active, Available, Checking, MalwareDetected, Failed)</value>
+        /// <value>File status corresponding to virus scan status. (Active, Available, Checking, MalwareDetected, Failed)</value>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 

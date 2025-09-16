@@ -102,7 +102,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -120,7 +120,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -133,7 +133,7 @@ namespace Lusid.Drive.Sdk.Api
         /// GetRootFolder: List contents of root folder
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -150,7 +150,7 @@ namespace Lusid.Drive.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -309,7 +309,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -328,7 +328,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -345,7 +345,7 @@ namespace Lusid.Drive.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -363,7 +363,7 @@ namespace Lusid.Drive.Sdk.Api
         /// 
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1175,7 +1175,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1194,7 +1194,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1305,7 +1305,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1325,7 +1325,7 @@ namespace Lusid.Drive.Sdk.Api
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1438,7 +1438,7 @@ namespace Lusid.Drive.Sdk.Api
         /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1456,7 +1456,7 @@ namespace Lusid.Drive.Sdk.Api
         /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1559,7 +1559,7 @@ namespace Lusid.Drive.Sdk.Api
         /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
@@ -1578,7 +1578,7 @@ namespace Lusid.Drive.Sdk.Api
         /// GetRootFolder: List contents of root folder 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
+        /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.             This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields             must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
