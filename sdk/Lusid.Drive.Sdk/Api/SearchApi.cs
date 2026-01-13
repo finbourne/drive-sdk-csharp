@@ -303,18 +303,22 @@ namespace Lusid.Drive.Sdk.Api
 
             if (page != null)
             {
+
                 localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
             }
             if (sortBy != null)
             {
+
                 localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
             }
             if (limit != null)
             {
+
                 localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (filter != null)
             {
+
                 localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
             }
             localVarRequestOptions.Data = searchBody;
