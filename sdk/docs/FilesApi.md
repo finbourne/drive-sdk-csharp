@@ -13,7 +13,7 @@ All URIs are relative to *https://fbn-prd.lusid.com/drive*
 
 <a id="createfile"></a>
 # **CreateFile**
-> StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body)
+> StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int contentLength, System.IO.Stream body)
 
 CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
 
@@ -59,7 +59,7 @@ namespace Examples
             var xLusidDriveFilename = "xLusidDriveFilename_example";  // string | File name.
             var xLusidDrivePath = "xLusidDrivePath_example";  // string | File path.
             var contentLength = 56;  // int | The size in bytes of the file to be uploaded
-            var body = System.Text.Encoding.ASCII.GetBytes("BYTE_ARRAY_DATA_HERE");  // byte[] | 
+            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | Binary file content to upload as a stream
 
             try
             {
@@ -108,7 +108,7 @@ catch (ApiException e)
 | **xLusidDriveFilename** | **string** | File name. |  |
 | **xLusidDrivePath** | **string** | File path. |  |
 | **contentLength** | **int** | The size in bytes of the file to be uploaded |  |
-| **body** | **byte[]** |  |  |
+| **body** | **System.IO.Stream****System.IO.Stream** | Binary file content to upload as a stream |  |
 
 ### Return type
 
@@ -465,7 +465,7 @@ catch (ApiException e)
 
 <a id="updatefilecontents"></a>
 # **UpdateFileContents**
-> StorageObject UpdateFileContents (string id, int contentLength, byte[] body)
+> StorageObject UpdateFileContents (string id, int contentLength, System.IO.Stream body)
 
 [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.
 
@@ -510,7 +510,7 @@ namespace Examples
             var apiInstance = ApiFactoryBuilder.Build(secretsFilename).Api<FilesApi>();
             var id = "id_example";  // string | The unique file identifier
             var contentLength = 56;  // int | The size in bytes of the file to be uploaded
-            var body = System.Text.Encoding.ASCII.GetBytes("BYTE_ARRAY_DATA_HERE");  // byte[] | 
+            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | Binary file content to upload as a stream
 
             try
             {
@@ -558,7 +558,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **string** | The unique file identifier |  |
 | **contentLength** | **int** | The size in bytes of the file to be uploaded |  |
-| **body** | **byte[]** |  |  |
+| **body** | **System.IO.Stream****System.IO.Stream** | Binary file content to upload as a stream |  |
 
 ### Return type
 
