@@ -78,7 +78,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the CreateFolderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -189,7 +188,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the DeleteFolderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -299,7 +297,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the GetFolderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -417,7 +414,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the GetFolderContentsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -539,7 +535,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the GetRootFolderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -658,7 +653,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the MoveFolderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -776,7 +770,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the UpdateFolderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 

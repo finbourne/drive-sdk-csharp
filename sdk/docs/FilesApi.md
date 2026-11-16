@@ -80,7 +80,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the CreateFileWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -194,7 +193,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the DeleteFileWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -303,7 +301,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the DownloadFileWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -417,7 +414,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the GetFileWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -531,7 +527,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the UpdateFileContentsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
@@ -646,7 +641,6 @@ namespace Examples
     }
 }
 ```
-
 #### Using the UpdateFileMetadataWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
